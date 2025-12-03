@@ -3,7 +3,7 @@ use home::home_dir;
 use std::{env, fmt::Display, fs::read_to_string, time::Instant};
 
 mod day1;
-//mod day2;
+mod day2;
 mod day3;
 
 enum TaskResult {
@@ -43,7 +43,7 @@ type Day = [fn(String) -> TaskResult; 2];
 
 const DAYS: &[Day] = &[
     day1::PARTS,
-    //day2::PARTS,
+    day2::PARTS,
     day3::PARTS,
     //day4::PARTS,
     //day5::PARTS,
@@ -100,4 +100,70 @@ fn main() {
     println!("{result}");
 
     println!("Solving took: {t_solve:?}");
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn day1_part1_ex1() {
+        let quest = 1;
+        let part = 1;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 3),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
+    #[test]
+    fn day1_part2_ex1() {
+        let quest = 1;
+        let part = 2;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 6),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
+    #[test]
+    fn day2_part1_ex1() {
+        let quest = 2;
+        let part = 1;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 1227775554),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
+    #[test]
+    fn day2_part2_ex1() {
+        let quest = 2;
+        let part = 2;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 4174379265),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
+    #[test]
+    fn day3_part1_ex1() {
+        let quest = 3;
+        let part = 1;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 357),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
+    #[test]
+    fn day3_part2_ex1() {
+        let quest = 3;
+        let part = 2;
+        let input = load_input(quest, 1);
+        match DAYS[quest - 1][part - 1](input) {
+            TaskResult::Number(x) => assert_eq!(x, 3121910778619),
+            TaskResult::Generic(x) => panic!("'{x}' should not be generic"),
+        }
+    }
 }
