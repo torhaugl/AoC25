@@ -2,7 +2,7 @@
 use home::home_dir;
 use std::{env, fmt::Display, fs::read_to_string, time::Instant};
 
-//mod day1;
+mod day1;
 //mod day2;
 mod day3;
 
@@ -42,7 +42,7 @@ where
 type Day = [fn(String) -> TaskResult; 2];
 
 const DAYS: &[Day] = &[
-    //day1::PARTS,
+    day1::PARTS,
     //day2::PARTS,
     day3::PARTS,
     //day4::PARTS,
@@ -85,8 +85,7 @@ fn main() {
 
     let t = Instant::now();
 
-    // let input = load_input(quest, example);
-    let input = load_input(3, 1);
+    let input = load_input(quest, example);
 
     let t_load = t.elapsed();
 
