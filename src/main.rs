@@ -5,6 +5,7 @@ use std::{env, fmt::Display, fs::read_to_string, time::Instant};
 mod day1;
 mod day2;
 mod day3;
+mod day8;
 
 enum TaskResult {
     Number(i64),
@@ -45,7 +46,7 @@ const DAYS: &[Day] = &[
     day1::PARTS,
     day2::PARTS,
     day3::PARTS,
-    //day4::PARTS,
+    day8::PARTS,
     //day5::PARTS,
     //day3::PARTS,
 ];
@@ -93,7 +94,8 @@ fn main() {
 
     let t = Instant::now();
 
-    let result = DAYS[quest - 1][part - 1](input);
+    //let result = DAYS[quest - 1][part - 1](input);
+    let result = DAYS[3][1](input);
 
     let t_solve = t.elapsed();
 
